@@ -1,7 +1,5 @@
 # Experiment with Cassowary Constraint Solvers, Rust and WASM
 
-What's going on:
-
 This repo contains a rust crate that uses the cassowary constraint solver library for rust.
 
 It exports one struct called App that contains the state (point locations)
