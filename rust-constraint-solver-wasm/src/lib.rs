@@ -107,7 +107,7 @@ impl App {
                 p1.x | EQ(REQUIRED) | 0.0,
                 p1.y | EQ(REQUIRED) | 0.0,
                 p2.x | EQ(REQUIRED) | window_width,
-                p2.y | EQ(REQUIRED) | 0.0,
+                p2.y | EQ(REQUIRED) | window_width/2.0,
             ])
             .unwrap();
 
@@ -129,11 +129,12 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_calculateLayout() {
-        let result = calculateLayout();
+    fn test_calculate_layout() {
+        let app = App::new();
+        let result = app.calculateLayout(); 
         assert_eq!(result.get("p1.x"), Some(&0.0));
         assert_eq!(result.get("p1.y"), Some(&0.0));
         assert_eq!(result.get("p2.x"), Some(&100.0));
-        assert_eq!(result.get("p2.y"), Some(&0.0));
+        assert_eq!(result.get("p2.y"), Some(&50.0));
     }
 }
